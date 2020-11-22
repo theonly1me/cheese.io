@@ -4,7 +4,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1. You can use the Node Package Manager(npm) in order to setup the project. 
 
 ### Clone the repo
-git clone https://github.com/your_username_/Project-Name.git
+git clone https://github.com/theonly1me/cheese.io
 
 ### Install NPM packages
 Please use the `npm install` or `npm i` to install project dependencies via npm.
