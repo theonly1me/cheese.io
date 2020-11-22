@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,28 +9,19 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['recipe-list.component.css'],
 })
 export class RecipeListComponent implements OnInit {
-  @Output() clickedRecipe? = new EventEmitter<Recipe>();
-  recipes: Recipe[] = [
-    new Recipe(
-      `Margherita Pizza`,
-      `Neapolitan pizza, made with San 
-  Marzano tomatoes, mozzarella cheese, fresh basil, 
-  salt and extra-virgin olive oil.`,
-      `https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2011/1/6/0/CCEV103_Margherita-Pizza_s4x3.jpg.rend.hgtvcom.616.462.suffix/1416867304309.jpeg`
-    ),
-    new Recipe(
-      `Tatertot Casserole`,
-      `Quick and easy casserole everyone will love!`,
-      `https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2012/6/15/0/CC_Hot-Dish-Tater-Tot-Casserole-Recipe_s4x3.jpg.rend.hgtvcom.826.620.suffix/1358449564114.jpeg`
-    ),
-  ];
+  // @Output() clickedRecipe = new EventEmitter<Recipe>();
+  // recipes: Recipe[] = [];
 
-  constructor() {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
-  ngOnInit() {}
-
-  getSelectedRecipe(data: Recipe) {
-    let clicked = this.recipes.filter((recipe) => recipe.name === data.name);
-    this.clickedRecipe?.emit(...clicked);
+  ngOnInit() {
+    // this.recipes = this.recipeService.getRecipes();
   }
+
+  onNewRecipe() {
+    this.router.navigate(['new'], { relativeTo: this.route });
+  }
+  // getSelectedRecipe(index: number) {
+  //   this.clickedRecipe?.emit(this.recipes[index]);
+  // }
 }

@@ -12,8 +12,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  navHandler(event: any): void {
-    const value = event?.target?.textContent;
-    this.selectedComponent.emit(value);
-  }
+  // navHandler(event: any): void {
+  //   const value = event?.target?.textContent;
+  //   this.selectedComponent.emit(value);
+  // }
 }

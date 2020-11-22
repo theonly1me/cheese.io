@@ -6,17 +6,23 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="navHandler($event)">Recipes</a></li>
-        <li><a href="#" (click)="navHandler($event)">Shopping List</a></li>
+        <!-- method-1 with routerLink, routerLinkActive to add active class dynamically -->
+        <li routerLinkActive="active">
+          <a [routerLink]="['recipebook']">Recipes</a>
+        </li>
+        <!-- method-2 with routerLink, routerLinkActive to add active class dynamically -->
+        <li routerLinkActive="active">
+          <a routerLink="/shoppinglist">Shopping List</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
-          <a href="#" class="dropdown-toggle" role="button"
+          <a class="dropdown-toggle" role="button"
             >Manage <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Save Data</a></li>
-            <li><a href="#">Fetch Data</a></li>
+            <li><a>Save Data</a></li>
+            <li><a>Fetch Data</a></li>
           </ul>
         </li>
       </ul>

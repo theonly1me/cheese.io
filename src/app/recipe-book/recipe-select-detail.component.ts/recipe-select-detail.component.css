@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;1,100;1,300&display=swap');
+
+.row {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+.inner-container {
+  position: absolute;
+  height: 100vh;
+  background-color: #dfe6e9;
+}
+h4 {
+  position: relative;
+  transform: translate(25%, 100%);
+  color: #2d3436;
+}

@@ -1,8 +1,10 @@
+<!-- Removed href from anchor to prevent page reload & added cursor:pointer style-->
+<!-- Routerlink need value of i therefore not in singlequotes-->
 <a
-  href="#"
   class="list-group-item clearfix"
-  (click)="onRecipeSelected($event)"
-  *ngFor="let recipe of recipes"
+  *ngFor="let recipe of recipes; let i = index"
+  [routerLink]="[i]"
+  routerLinkActive="active"
 >
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
