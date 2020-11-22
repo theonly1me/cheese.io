@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingService } from '../shopping-list/shopping.service';
 import { Recipe } from './recipe.model';
+import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class RecipeService {
@@ -32,7 +33,7 @@ export class RecipeService {
 
   constructor(private slService: ShoppingService) {}
 
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new Subject<Recipe>();
 
   getRecipes(): Recipe[] {
     //using slice without arguments to return a copy of original array

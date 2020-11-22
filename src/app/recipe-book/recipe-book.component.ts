@@ -12,9 +12,9 @@ export class RecipeBookComponent implements OnInit {
   showDetails = false;
   constructor(private recipeService: RecipeService) {}
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe((data: Recipe) => {
-      this.recipe = data;
-    });
+    // this.recipeService.recipeSelected.subscribe((data: Recipe) => {
+    //   this.recipe = data;
+    // });
   }
   // onRecipeClick(data: Recipe) {
   //   this.recipe = data;

@@ -17,7 +17,7 @@ export class RecipeItemComponent implements OnInit {
 
   // onRecipeSelected(index: any): void {
   //   //using ! non null assertion operator.
-  //   this.recipeService.recipeSelected.emit(this.recipes![index]);
+  //   // this.recipeService.recipeSelected.next(this.recipes![index]);
   //   // this.recipeClicked.emit(index);
   // }
 }
