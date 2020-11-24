@@ -9,9 +9,7 @@ export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe(
       `Margherita Pizza`,
-      `Neapolitan pizza, made with San 
-      Marzano tomatoes, mozzarella cheese, fresh basil, 
-      salt and extra-virgin olive oil.`,
+      `Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt and extra-virgin olive oil.`,
       `https://cook.fnr.sndimg.com/content/dam/images/cook/fullset/2011/1/6/0/CCEV103_Margherita-Pizza_s4x3.jpg.rend.hgtvcom.616.462.suffix/1416867304309.jpeg`,
       [
         new Ingredient('Tomatoes', 2),
@@ -31,6 +29,8 @@ export class RecipeService {
     ),
   ];
 
+  updatedRecipe = new Subject<Recipe[]>();
+
   constructor(private slService: ShoppingService) {}
 
   // recipeSelected = new Subject<Recipe>();
@@ -42,6 +42,20 @@ export class RecipeService {
 
   getRecipeByID(id: number): Recipe {
     return this.recipes[id];
+  }
+
+  addRecipe(recipe: Recipe) {
+    const index = this.recipes.findIndex(
+      r => r.name.toLowerCase() === recipe.name.toLowerCase()
+    );
+    if (index === -1) this.recipes.push(recipe);
+    else this.recipes.splice(index, 1, recipe);
+    this.updatedRecipe.next(this.recipes);
+  }
+
+  deleteRecipe(id: number) {
+    this.recipes.splice(id, 1);
+    this.updatedRecipe.next(this.recipes);
   }
 
   addIngredientsToSL(ingredients: Ingredient[]) {
