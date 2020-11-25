@@ -8,21 +8,31 @@
       <ul class="nav navbar-nav">
         <!-- method-1 with routerLink, routerLinkActive to add active class dynamically -->
         <li routerLinkActive="active">
-          <a [routerLink]="['recipebook']">Recipes</a>
+          <a [routerLink]="['auth']" *ngIf="!isAuthenticated">Login</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['recipebook']" *ngIf="isAuthenticated"
+            >Recipe Book</a
+          >
         </li>
         <!-- method-2 with routerLink, routerLinkActive to add active class dynamically -->
         <li routerLinkActive="active">
-          <a routerLink="/shoppinglist">Shopping List</a>
+          <a routerLink="/shoppinglist" *ngIf="isAuthenticated"
+            >Shopping List</a
+          >
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a *ngIf="isAuthenticated" (click)="onLogout()">Logout</a>
+        </li>
         <li class="dropdown" appDropdown>
-          <a class="dropdown-toggle" role="button"
+          <a class="dropdown-toggle" role="button" *ngIf="isAuthenticated"
             >Manage <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
-            <li><a>Save Data</a></li>
-            <li><a>Fetch Data</a></li>
+            <li><a (click)="onSaveData()">Save Data</a></li>
+            <li><a (click)="onFetchData()">Fetch Data</a></li>
           </ul>
         </li>
       </ul>

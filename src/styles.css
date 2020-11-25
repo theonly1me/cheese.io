@@ -1,11 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;1,100;1,300&display=swap');
 
+*:focus {
+  outline: 0 !important;
+}
+
 .btn {
   background-color: #0984e3;
   border-color: #0984e3;
   border-radius: 50px;
   font-weight: 500;
+
   transition: background-color 0.2s, border-color 0.2s;
 }
 .btn:hover,
