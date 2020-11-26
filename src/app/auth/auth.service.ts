@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EmailValidator } from '@angular/forms';
 import { User } from './user.model';
 import { tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 interface AuthResponseData {
   idToken: string;
@@ -17,7 +17,6 @@ interface AuthResponseData {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private API_KEY = `AIzaSyA_PV4itzjhxqZ3GDsrhKBXa9MwL2bYDWY`;
   user = new BehaviorSubject<User>(null!);
   tokenExpirationTimer?: any;
   constructor(private http: HttpClient, private router: Router) {}
@@ -25,7 +24,7 @@ export class AuthService {
   signUp(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.API_KEY}`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.API_KEY}`,
         {
           email: email,
           password: password,
@@ -42,7 +41,7 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.API_KEY}`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.API_KEY}`,
         {
           email: email,
           password: password,
