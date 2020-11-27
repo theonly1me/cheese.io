@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingService } from './shopping.service';
 import { Subscription } from 'rxjs';
+// import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-shopping-list',
@@ -13,9 +14,13 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients?: Ingredient[];
   selectedIngredient?: Ingredient;
   selectedSub?: Subscription;
-  constructor(private shoppingService: ShoppingService) {}
+  constructor(
+    private shoppingService: ShoppingService // private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>
+  ) {}
 
   ngOnInit() {
+    //shoppingList mapped to shoppingListReducer function in app.module.ts
+    // this.store.select('shoppingList');
     this.ingredients = this.shoppingService.getIngredients();
     this.selectedSub = this.shoppingService.getSelectedIngredient.subscribe(
       (ingredient: Ingredient) => {
