@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/delivariety",
+    "public": "dist/cheeseio",
     "ignore": [
       "firebase.json",
       "**/.*",
