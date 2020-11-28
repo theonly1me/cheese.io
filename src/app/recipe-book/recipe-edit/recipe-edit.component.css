@@ -31,23 +31,10 @@ h4 {
   font-weight: 500;
 }
 
-.btn {
-  background-color: #0984e3;
-  border-color: #0984e3;
-  border-radius: 50px;
-  margin: 5px;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
 .x-button {
   margin: 34px 0 0 0;
 }
 
-.btn:hover,
-.btn:active {
-  background-color: #0871c2;
-  border-color: #0871c2;
-}
 .row {
   background-color: #dfe6e9;
   color: #2d3436;

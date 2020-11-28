@@ -2,7 +2,64 @@ a {
   cursor: pointer;
 }
 
-img {
-  width: 200px;
-  height: 200px;
+.nav--logo {
+  height: 100px;
+}
+
+.nav--header {
+  background-color: #f7f1e3;
+  text-align: center;
+}
+
+.dropdown-menu {
+  background-color: #2d3436;
+}
+
+.nav--list {
+  list-style: none;
+}
+
+.nav--list a:link,
+.nav--list a:visited,
+.nav--list-second a,
+.nav--list-second a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  padding: 5px 10px 0px 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: color 0.2s, padding-bottom 0.2s, border-bottom 0.2s;
+}
+
+.nav--list a:hover,
+.nav--list a:active,
+.nav--list-second a:hover,
+.nav--list-second a:active {
+  color: #f7f1e3;
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f7f1e3;
+}
+
+.nav--list li,
+.nav--list-second li {
+  display: inline-flex;
+}
+
+.nav--list {
+  float: left;
+}
+
+.nav--list-second {
+  float: right;
+  margin-right: 5%;
+}
+
+.nav {
+  background-color: #2d3436;
+}
+
+.nav--menu-container {
+  height: 50px;
 }

@@ -13,18 +13,6 @@ h4 {
   font-weight: 500;
 }
 
-.btn {
-  background-color: #0984e3;
-  border-color: #0984e3;
-  margin: 5px;
-  border-radius: 50px;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-.btn:hover,
-.btn:active {
-  background-color: #0871c2;
-  border-color: #0871c2;
-}
 .row {
   color: #2d3436;
   font-family: 'Raleway', sans-serif;

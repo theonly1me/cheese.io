@@ -6,11 +6,11 @@
           <button
             type="submit"
             [disabled]="recipeEditForm!.status === 'INVALID'"
-            class="btn btn-success"
+            class="btn btn--new"
           >
             Save
           </button>
-          <button type="button" class="btn btn-danger" (click)="onCancel()">
+          <button type="button" class="btn btn--new" (click)="onCancel()">
             Cancel
           </button>
         </div>
@@ -95,7 +95,7 @@
                 <button
                   type="button"
                   (click)="deleteIngredient(i)"
-                  class="btn btn-danger x-button"
+                  class="btn x-button"
                 >
                   X
                 </button>
@@ -107,7 +107,7 @@
             <div class="col-xs-12">
               <button
                 type="button"
-                class="btn btn-info btn-add-ing"
+                class="btn btn-add-ing"
                 (click)="onAddIngredient()"
               >
                 Add Ingredient
